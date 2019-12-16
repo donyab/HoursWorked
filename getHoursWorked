@@ -1,4 +1,4 @@
-Пример PPOST запроса к тестовой базе:
+Пример POST запроса к тестовой базе:
 http://app015.bhsad.org/TEST_BUH_01/hs/uuapp/gethoursworked/?start=1575759600&end=1575845999&accToken=b1de798c-a0f7-452f-884f-9fdcebd6c115
 Параметры:
 start - дата начала выборки в UNIX time
