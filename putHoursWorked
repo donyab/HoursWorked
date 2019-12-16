@@ -1,0 +1,41 @@
+Пример POST запроса к тестовой базе:
+http://app015.bhsad.org/TEST_BUH_01/hs/uuapp/puthoursworked/?accToken=b1de798c-a0f7-452f-884f-9fdcebd6c115
+Параметры:
+accToken - токен доступа
+
+В теле запроса передаем массив преподавателей и проведенных ими уроков:
+Пример запроса в тестовую базу:
+Расшифровка полей:
+idTutor - идентификатор преподавателя
+arrayLessons - массив согласуемых уроков
+  status - согласован или нет(true or false)
+  idLesson - идентификатор урока
+
+[
+  {
+    "idTutor" : "b1de798c-a0f7-452f-884f-9fdcebd6c115",
+    "arrayLessons":
+    [
+      {
+      "status" : false,
+      "idLesson" : "5fc7b5ff-478c-4615-93c8-7fad767f121a"
+      },
+      {
+      "status" : true,
+      "idLesson" : "84010f8b-fe6f-4c24-947e-c30b92bf822f"
+      }
+    ]
+  }
+]
+
+Пример ответа от тестовой базы:
+Расшифровка полей:
+status - информирует об успехе выполнения запроса (ok/error)
+message - строка с информацией об успехе или ошибке
+
+{
+   "status": "ok",
+   "message": "all lesson approved"
+}
+
+
