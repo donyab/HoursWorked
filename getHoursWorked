@@ -1,0 +1,282 @@
+Пример PPOST запроса к тестовой базе:
+http://app015.bhsad.org/TEST_BUH_01/hs/uuapp/gethoursworked/?start=1575759600&end=1575845999&accToken=b1de798c-a0f7-452f-884f-9fdcebd6c115
+Параметры:
+start - дата начала выборки в UNIX time
+end - дата конца выборки в UNIX time
+accToken - идентификатор преподавателя
+
+
+Пример ответа от тестовой базы:
+Расшифровка полей:
+status - информирует об успехе выполнения запроса (ok/error)
+message - массив содержаций информацию о занятии, состоит из:
+  idLesson - идентификатор урока
+  clockSchedule - длительность из расписания
+  clockTeacher - длительность от учителя
+  clockSummary - длительность указанная координатором
+  startTime - время начала урока
+  endTime - время окончания урока
+  arrayItems - массив разбивки времени, т.к. занятия могут идти для нескольких учебных курсов:
+            clockSchedulee - длительность из расписания
+            clockTeachere - длительность от учителя
+            clockSummarye - длительность указанная координатором
+            coursee - руссое и английское наименование, идентификатор курса
+            disciplineSchedulee - руссое и английское наименование, идентификатор дисциплины (расписание)
+            disciplineTeachere - руссое и английское наименование, идентификатор дисциплины (преподаватель)
+            disciplineSummarye - руссое и английское наименование, идентификатор дисциплины (координатор)
+            sGroupe - руссое и английское наименование, идентификатор подгруппы
+            schoole - руссое и английское наименование, идентификатор школы
+            teacherCommente - комментарий к занятию
+            trainingCoursee - руссое и английское наименование, идентификатор учебного курса
+            typeOfWorkSchedulee - руссое и английское наименование, идентификатор типа работы (расписание)
+            typeOfWorkTeachere - руссое и английское наименование, идентификатор типа работы (преподаватель)
+            typeOfWorkSummarye - руссое и английское наименование, идентификатор типа работы (координатор)
+
+
+{
+   "status": "ok",
+   "message":    [
+            {
+         "idLesson": "5fc7b5ff-478c-4615-93c8-7fad767f121a",
+         "clockSchedule": 4,
+         "clockTeacher": 7,
+         "clockSummary": 0,
+         "startTime": 1575799200,
+         "endTime": 1575810000,
+         "arrayItems": [         {
+            "clockSchedule": 4,
+            "clockTeacher": 7,
+            "clockSummary": 0,
+            "course":             {
+               "nameEn": "",
+               "nameRu": "",
+               "id": "00000000-0000-0000-0000-000000000000"
+            },
+            "disciplineSchedule":             {
+               "nameEn": "",
+               "nameRu": "Режиссерское мастерство. Работа с актером",
+               "id": "4b8a82c4-9e84-11e5-80f3-0050568f55d5"
+            },
+            "disciplineTeacher":             {
+               "nameEn": "",
+               "nameRu": "Аттестация по The Takes",
+               "id": "be7b4580-7e75-11e6-8109-0050568f55d5"
+            },
+            "disciplineSummary":             {
+               "nameEn": "",
+               "nameRu": "",
+               "id": "00000000-0000-0000-0000-000000000000"
+            },
+            "sGroup":             {
+               "nameEn": "",
+               "nameRu": "",
+               "id": "00000000-0000-0000-0000-000000000000"
+            },
+            "school":             {
+               "nameEn": "MFS",
+               "nameRu": "МШК",
+               "id": "0db62749-5f67-11e4-80d0-0050568f55d5"
+            },
+            "teacherComment": "",
+            "trainingCourse":             {
+               "nameEn": "Directing",
+               "nameRu": "Режиссура",
+               "id": "d928c6d6-6019-11e4-80d0-0050568f55d5"
+            },
+            "typeOfWorkSchedule":             {
+               "nameEn": "",
+               "nameRu": "Занятие",
+               "id": "c0580d39-c28c-11e8-8147-0050568f55d5"
+            },
+            "typeOfWorkTeacher":             {
+               "nameEn": "",
+               "nameRu": "Консультация",
+               "id": "c0580d3a-c28c-11e8-8147-0050568f55d5"
+            },
+            "typeOfWorkSummary":             {
+               "nameEn": "",
+               "nameRu": "",
+               "id": "00000000-0000-0000-0000-000000000000"
+            }
+         }]
+      },
+            {
+         "idLesson": "84010f8b-fe6f-4c24-947e-c30b92bf822f",
+         "clockSchedule": 4,
+         "clockTeacher": 4,
+         "clockSummary": 1.67,
+         "startTime": 1575813600,
+         "endTime": 1575824400,
+         "arrayItems":          [
+                        {
+               "clockSchedule": 1.34,
+               "clockTeacher": 1.34,
+               "clockSummary": 0,
+               "course":                {
+                  "nameEn": "",
+                  "nameRu": "1-й курс",
+                  "id": "67b8d0aa-604e-11e4-80d0-0050568f55d5"
+               },
+               "disciplineSchedule":                {
+                  "nameEn": "",
+                  "nameRu": "Актерское мастерство: Дубляж. Озвучание",
+                  "id": "740e5d65-b2b6-11e8-8145-0050568f55d5"
+               },
+               "disciplineTeacher":                {
+                  "nameEn": "",
+                  "nameRu": "Актерское мастерство: Дубляж. Озвучание",
+                  "id": "740e5d65-b2b6-11e8-8145-0050568f55d5"
+               },
+               "disciplineSummary":                {
+                  "nameEn": "",
+                  "nameRu": "",
+                  "id": "00000000-0000-0000-0000-000000000000"
+               },
+               "sGroup":                {
+                  "nameEn": "",
+                  "nameRu": "",
+                  "id": "00000000-0000-0000-0000-000000000000"
+               },
+               "school":                {
+                  "nameEn": "MFS",
+                  "nameRu": "МШК",
+                  "id": "0db62749-5f67-11e4-80d0-0050568f55d5"
+               },
+               "teacherComment": "",
+               "trainingCourse":                {
+                  "nameEn": "Acting",
+                  "nameRu": "Актерское мастерство",
+                  "id": "e0e3b19d-6019-11e4-80d0-0050568f55d5"
+               },
+               "typeOfWorkSchedule":                {
+                  "nameEn": "",
+                  "nameRu": "Занятие",
+                  "id": "c0580d39-c28c-11e8-8147-0050568f55d5"
+               },
+               "typeOfWorkTeacher":                {
+                  "nameEn": "",
+                  "nameRu": "Занятие",
+                  "id": "c0580d39-c28c-11e8-8147-0050568f55d5"
+               },
+               "typeOfWorkSummary":                {
+                  "nameEn": "",
+                  "nameRu": "",
+                  "id": "00000000-0000-0000-0000-000000000000"
+               }
+            },
+                        {
+               "clockSchedule": 1.33,
+               "clockTeacher": 1.33,
+               "clockSummary": 0,
+               "course":                {
+                  "nameEn": "",
+                  "nameRu": "2-й курс",
+                  "id": "67b8d0ab-604e-11e4-80d0-0050568f55d5"
+               },
+               "disciplineSchedule":                {
+                  "nameEn": "",
+                  "nameRu": "Adobe Premier Pro CC 2015",
+                  "id": "7c0b0a65-69a2-11e4-80d6-0050568f55d5"
+               },
+               "disciplineTeacher":                {
+                  "nameEn": "",
+                  "nameRu": "Adobe Premier Pro CC 2015",
+                  "id": "7c0b0a65-69a2-11e4-80d6-0050568f55d5"
+               },
+               "disciplineSummary":                {
+                  "nameEn": "",
+                  "nameRu": "",
+                  "id": "00000000-0000-0000-0000-000000000000"
+               },
+               "sGroup":                {
+                  "nameEn": "",
+                  "nameRu": "Подгруппа 2",
+                  "id": "fdf00e5a-78bf-11e5-80ec-0050568f55d5"
+               },
+               "school":                {
+                  "nameEn": "MFS",
+                  "nameRu": "МШК",
+                  "id": "0db62749-5f67-11e4-80d0-0050568f55d5"
+               },
+               "teacherComment": "",
+               "trainingCourse":                {
+                  "nameEn": "Editing",
+                  "nameRu": "Монтаж",
+                  "id": "02824ee1-6013-11e4-80d0-0050568f55d5"
+               },
+               "typeOfWorkSchedule":                {
+                  "nameEn": "",
+                  "nameRu": "Занятие",
+                  "id": "c0580d39-c28c-11e8-8147-0050568f55d5"
+               },
+               "typeOfWorkTeacher":                {
+                  "nameEn": "",
+                  "nameRu": "Занятие",
+                  "id": "c0580d39-c28c-11e8-8147-0050568f55d5"
+               },
+               "typeOfWorkSummary":                {
+                  "nameEn": "",
+                  "nameRu": "",
+                  "id": "00000000-0000-0000-0000-000000000000"
+               }
+            },
+                        {
+               "clockSchedule": 1.33,
+               "clockTeacher": 1.33,
+               "clockSummary": 1.67,
+               "course":                {
+                  "nameEn": "",
+                  "nameRu": "2-й курс",
+                  "id": "67b8d0ab-604e-11e4-80d0-0050568f55d5"
+               },
+               "disciplineSchedule":                {
+                  "nameEn": "",
+                  "nameRu": "Анализ рынка",
+                  "id": "426a5b83-6766-11e5-80ec-0050568f55d5"
+               },
+               "disciplineTeacher":                {
+                  "nameEn": "",
+                  "nameRu": "Анализ рынка",
+                  "id": "426a5b83-6766-11e5-80ec-0050568f55d5"
+               },
+               "disciplineSummary":                {
+                  "nameEn": "",
+                  "nameRu": "PPM по проекту \"Сериал\"",
+                  "id": "bcf64cce-9ae1-11e7-8124-0050568f55d5"
+               },
+               "sGroup":                {
+                  "nameEn": "",
+                  "nameRu": "",
+                  "id": "00000000-0000-0000-0000-000000000000"
+               },
+               "school":                {
+                  "nameEn": "MFS",
+                  "nameRu": "МШК",
+                  "id": "0db62749-5f67-11e4-80d0-0050568f55d5"
+               },
+               "teacherComment": "",
+               "trainingCourse":                {
+                  "nameEn": "Producing",
+                  "nameRu": "Продюсирование",
+                  "id": "d9474d9a-6012-11e4-80d0-0050568f55d5"
+               },
+               "typeOfWorkSchedule":                {
+                  "nameEn": "",
+                  "nameRu": "Занятие",
+                  "id": "c0580d39-c28c-11e8-8147-0050568f55d5"
+               },
+               "typeOfWorkTeacher":                {
+                  "nameEn": "",
+                  "nameRu": "Занятие",
+                  "id": "c0580d39-c28c-11e8-8147-0050568f55d5"
+               },
+               "typeOfWorkSummary":                {
+                  "nameEn": "",
+                  "nameRu": "Занятие",
+                  "id": "c0580d39-c28c-11e8-8147-0050568f55d5"
+               }
+            }
+         ]
+      }
+   ]
+}
